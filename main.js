@@ -3,6 +3,12 @@ var saveBtn = document.getElementById('save');
 
 saveBtn.addEventListener('click', saveAsFile);
 
+document.getElementById('sampleFill').addEventListener('click', function () {
+    textArea.value = JSON.stringify(sampledata);
+    var event = new Event('input');
+    textArea.dispatchEvent(event);
+});
+
 textArea.addEventListener("input", function(){
     var text = textArea.value;
     try{
